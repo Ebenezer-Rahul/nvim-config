@@ -39,11 +39,23 @@ Plug 'vim-airline/vim-airline-themes'
 
 "Git
 Plug 'airblade/vim-gitgutter'
+
+"Wiki
+"
+Plug 'vimwiki/vimwiki'
+
+"colorscheme
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
 call plug#end()
+
 
 
 source ~/.config/nvim/setup/setup.vim
 source ~/.config/nvim/setup/Unite.vim 
 source ~/.config/nvim/setup/vim-sexp.vim
 source ~/.config/nvim/setup/nerdTree.vim
+
+"
+autocmd VimEnter * NERDTree
 
