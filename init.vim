@@ -10,8 +10,8 @@ Plug 'wakatime/vim-wakatime'
 "Plug 'ramele/agrep'
 
 "This one for substitution abbrevations and case Editing
-"case Editing is easy cammel case csc mised case crm , for . cr. for upper cru
-"and for snake case crs
+" Want to turn fooBar into foo_bar? Press crs (coerce to snake_case). MixedCase (crm), camelCase (crc), 
+" snake_case (crs), UPPER_CASE (cru), dash-case (cr-), dot.case (cr.), space case (cr<space>), and Title Case (crt) are all just 3 keystrokes away.
 Plug 'tpope/vim-abolish'
 
 Plug 'svermeulen/vim-repeat'
@@ -47,6 +47,9 @@ Plug 'vimwiki/vimwiki'
 "colorscheme
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
+"codeForces
+Plug 'gabrielsimoes/cfparser.vim'
+
 call plug#end()
 
 
@@ -55,7 +58,12 @@ source ~/.config/nvim/setup/setup.vim
 source ~/.config/nvim/setup/Unite.vim 
 source ~/.config/nvim/setup/vim-sexp.vim
 source ~/.config/nvim/setup/nerdTree.vim
+source ~/.config/nvim/setup/lsp.lua
+source ~/.config/nvim/setup/completion.lua
+source ~/.config/nvim/language/tsserver.lua
+source ~/.config/nvim/language/lua_lsp.lua
+" source ~/.config/nvim/setup/lsp.lua
 
 "
-autocmd VimEnter * NERDTree
-
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') && v:this_session == '' | NERDTree | endif
