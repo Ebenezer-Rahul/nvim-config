@@ -4,6 +4,7 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'guns/vim-sexp'
 Plug 'mbbill/undotree'
 Plug 'wakatime/vim-wakatime'
